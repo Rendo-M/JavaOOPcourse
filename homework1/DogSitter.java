@@ -26,5 +26,11 @@ public class DogSitter {
         this.phone = phone;
         toWalk = new ArrayList<>();
     }
+
+    @Override
+    public String toString() {
+        return this.name + "\n" + this.phone + "\n" + toWalk;
+        
+    }
     
 }
