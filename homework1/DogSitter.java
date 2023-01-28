@@ -2,35 +2,27 @@ package homework1;
 
 import java.util.ArrayList;
 
-public class DogSitter {
+public class DogSitter extends Persone {
 
     String name;
     String phone;
-    private ArrayList<Dog> toWalk;
+    private ArrayList<Dog> dogs;
 
-    public void askWalk(Dog dog) {
-        this.toWalk.add(dog);
-    }
+
 
     public void stopWalk(Dog dog){
-        if (toWalk.contains(dog))
-            toWalk.remove(dog);
+        if (dogs.contains(dog))
+            dogs.remove(dog);
     }
 
     public boolean isWalk(Dog dog){
-        return toWalk.contains(dog);
+        return dogs.contains(dog);
     }
 
     DogSitter(String name, String phone){
-        this.name = name;
-        this.phone = phone;
-        toWalk = new ArrayList<>();
+        super(name, phone);
     }
 
-    @Override
-    public String toString() {
-        return this.name + "\n" + this.phone + "\n" + toWalk;
-        
-    }
+   
     
 }
