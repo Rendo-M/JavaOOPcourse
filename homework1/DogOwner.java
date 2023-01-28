@@ -14,5 +14,14 @@ public class DogOwner extends Persone{
         if (this.dogs.size() >= dogID) {
         ds.addDog(this.dogs.get(dogID));}
     }
+    public void SetDogSitterForAll(DogSitter ds){
+        for (Dog dog : dogs) {
+            ds.addDog(dog);
+        }
+    }
 
+    
+    public String toString(){
+        return "DogOwner \n"+super.toString();
+    }
 }

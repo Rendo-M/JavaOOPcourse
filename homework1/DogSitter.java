@@ -23,6 +23,10 @@ public class DogSitter extends Persone {
         super(name, phone);
     }
 
+    public String toString(){
+        return "Dogsitter \n"+super.toString();
+    }
+
    
     
 }

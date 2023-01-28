@@ -14,16 +14,18 @@ public class Main {
     Billy.addDog(pet1);
     Dog pet2 = new Dog("Wolfy", "Alabay", Billy);
     Billy.addDog(pet2);
-    System.out.println(Billy);
-    System.out.println("*****************");
     DogSitter Samuel = new DogSitter("Samuel", "111334");
-    Billy.SetDogsitter(Samuel, 0);
-    System.out.println(Samuel);
-    System.out.println("*****************");
-    Billy.SetDogsitter(Samuel, 1);
-    Billy.SetDogsitter(Samuel, 1);
-    System.out.println(Samuel);
-    ArrayList <Persone> users = new ArrayList<>();
-    
+
+    Users users = new Users();
+    users.addUser(Samuel);
+    users.addUser(Billy);
+    for (Persone user : users.userList) {
+        if (user instanceof DogOwner){
+           ((DogOwner) user).SetDogSitterForAll(users.findDogSitter());
+        }
+    }   
+    System.out.println(users); 
     }
+    
 }
+
