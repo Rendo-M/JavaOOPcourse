@@ -8,16 +8,10 @@ public class Dog {
     Dog(String name, String breed, DogOwner owner){
         this.name = name; 
         this.breed = breed;
-        this.owner = owner; 
-    }
-    Dog(String name, String breed ){
-       this(name, breed, null);       
+        this.owner = owner;
+        owner.addDog(this);
     }
     
-    Dog(String name){
-        this(name, "unknown");
-     }
-
     public String getName(){
         return this.name;
     }

@@ -11,9 +11,7 @@ public class Main {
     
     DogOwner Billy = new DogOwner("Billy", "808080");
     Dog pet1 = new Dog("Charlie", "Haskey", Billy);
-    Billy.addDog(pet1);
     Dog pet2 = new Dog("Wolfy", "Alabay", Billy);
-    Billy.addDog(pet2);
     DogSitter Samuel = new DogSitter("Samuel", "111334");
 
     Users users = new Users();

@@ -16,7 +16,8 @@ public class DogOwner extends Persone{
     }
     public void SetDogSitterForAll(DogSitter ds){
         for (Dog dog : dogs) {
-            ds.addDog(dog);
+            if (!ds.isWalk(dog))
+                ds.addDog(dog);
         }
     }
 

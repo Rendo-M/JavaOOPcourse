@@ -16,13 +16,20 @@ public class DogSitter extends Persone {
     }
 
     public boolean isWalk(Dog dog){
+        if (this.dogs != null)
         return dogs.contains(dog);
+        return false;
     }
 
     DogSitter(String name, String phone){
         super(name, phone);
     }
 
+    public void addDog(Dog dog) {
+    if (! this.isWalk(dog))
+        super.addDog(dog);
+    }    
+    
     public String toString(){
         return "Dogsitter \n"+super.toString();
     }
