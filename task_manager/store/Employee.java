@@ -1,7 +1,7 @@
 package task_manager.store;
 
 public class Employee {
-    String lastName;
+    public String lastName;
     String firstName;
     String position;
 

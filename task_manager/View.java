@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class View {
     Scanner in;
-    View(){
+    public View(){
         in = new Scanner(System.in);
     }
    public void sout(String text) {

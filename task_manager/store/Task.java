@@ -4,7 +4,7 @@ package task_manager.store;
 import java.time.LocalDate;
 
 public class Task {
-    Employee performer;
+    public Employee performer;
     Employee vendor;
     LocalDate date;
     String description;
@@ -24,6 +24,15 @@ public class Task {
     
     @Override
     public String toString(){
-        return "Задачу поставил: " + this.performer + "\nИсполнитель: " + this.vendor +"\nДата постановки: "+ this.date +"\n"+ this.description;
+        return "\n********************************\nЗадачу поставил: " + this.vendor + "\nИсполнитель: " + this.performer +"\nДата постановки: "+ this.date +"\n_______________________________\n"+ this.description + "\n********************************";
+    }
+    public Employee getMaster(){
+        return this.vendor;
+    }
+    public Employee getPerformer(){
+        return this.performer;
+    }
+    public String getPriority(){
+        return this.priority;
     }
 }
