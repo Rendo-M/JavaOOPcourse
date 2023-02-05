@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Data {
     public ArrayList <Employee> crew;
     public ArrayList <Task> planner;
-    HashMap<Integer, String> prior;
+    public HashMap<Integer, String> prior;
 
     public Data(){
         this.crew =  new ArrayList<>();

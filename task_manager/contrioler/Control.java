@@ -11,15 +11,18 @@ public class Control {
     Data schedule;
     public View view;
 
-    public Control(String empl, String tasks, Integer userID){
+    public Control(String empl, String tasks){
         Loader loader = new Loader(empl, tasks);
         this.schedule = new Data();
         loader.readEmployees(schedule);
         loader.readTasks(schedule);
-        this.userID = userID;
         this.view = new View(); 
-
+        this.showEmployees();
+        int id = Integer.parseInt(view.ask("Для входа в систему введите ваш идентификатор: "));
+        this.setUserID(id);
+        this.view.sout("здравствуйте "+getEmployee(id).firstName);
     }
+
     public Employee getEmployee(int id){
         return schedule.crew.get(id);
     }
@@ -49,6 +52,16 @@ public void showSetted()
             view.sout("Task closed and removed from planner");
         }
     }
+    void addTask(){
+        this.showEmployees();
+        int perf = Integer.parseInt(view.ask("Введите ID исполнителя:"));
+        int prior = Integer.parseInt(view.ask("Введите приоритет" + schedule.prior+": "));
+        String desc = view.ask("Описание задачи:");
+        if (perf != this.userID){
+        schedule.addTask(perf, this.userID, desc, prior);
+        view.sout("Задача добавлена");    
+    }
+    }
 
     void showTasks(ArrayList<Task> tasks){
         for (int i = 0; i < tasks.size(); i++) {
@@ -65,5 +78,9 @@ public void showSetted()
     public void showByID(Integer ID){
         this.view.sout(schedule.getTasksByPerformer(ID).toString());
         this.view.sout(schedule.getTasksByMaster(ID).toString());
+    }
+
+    public void run(){
+        
     }
 }
