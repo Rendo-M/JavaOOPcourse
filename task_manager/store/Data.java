@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Data {
-    ArrayList <Employee> crew;
+    public ArrayList <Employee> crew;
     public ArrayList <Task> planner;
     HashMap<Integer, String> prior;
 
@@ -24,6 +24,10 @@ public class Data {
         planner.add( new Task(this.crew.get(performer), crew.get(master), description, prior.get(priority)));  
     }
 
+    public void removeTask(Task task){
+        planner.remove(task);
+    }
+    
     public Employee getEmployee(Integer ID){
         return this.crew.get(ID);
     }
