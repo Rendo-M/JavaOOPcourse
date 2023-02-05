@@ -1,11 +1,8 @@
 package task_manager.contrioler;
 
 import java.io.FileReader;
-import java.util.ArrayList;
 
 import task_manager.store.Data;
-import task_manager.store.Employee;
-import task_manager.store.Task;
 
 public class Loader {
     String empl;
@@ -34,5 +31,9 @@ public class Loader {
         data.addTask(6, 3, "изготовить опытный образец изделия x17", 0);
         
         
+    }
+
+    public void saveToFile(){
+
     }
 }
