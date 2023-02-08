@@ -1,9 +1,9 @@
 package phone_book.Model;
 
 public class Record {
-    String firstName;
-    String lastName;
-    String phone;
+    public String firstName;
+    public String lastName;
+    public String phone;
 
     Record(String firstName, String lastName, String phone){
         this.firstName = firstName;

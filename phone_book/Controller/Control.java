@@ -4,9 +4,12 @@ import phone_book.Model.Phonebook;
 import phone_book.View.View;
 
 public class Control {
-    Phonebook pb;
+    public Phonebook pb;
     View view;
-    Control(){
+    
+    public Control(){
+        this.pb = new Phonebook();
+        this.view = new View();
     }
 
     public void showBook(){

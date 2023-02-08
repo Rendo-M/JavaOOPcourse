@@ -14,6 +14,9 @@ public Phonebook(){
     this.setFilter("", "", "");
 }   
 
+public ArrayList<Record> getAllRecords(){
+    return this.phonebook;
+}
 
 public Record getFilter() {
     return filter;
