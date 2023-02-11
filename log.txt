@@ -1,0 +1,12 @@
+
+new session starts
+user calls function 1
+user calls function 5
+user calls function 8
+user change recordVictor Fedorov 234666
+user change recordVictor Fedorov 234666
+user calls function 9
+user add new record: 1 2 1231
+user calls function 0
+user delete recordMax Mironov 123121
+user calls function *

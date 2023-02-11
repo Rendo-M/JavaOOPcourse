@@ -1,6 +1,10 @@
 package phone_book.Controller;
 
+
+import java.io.IOException;
+
 import phone_book.IO.Loader;
+import phone_book.IO.Logger;
 import phone_book.Model.Phonebook;
 import phone_book.View.View;
 
@@ -9,11 +13,13 @@ public class Control {
     View view;
     String menu = "\n************************\n1 Импорт из формата 1 \n2 Импорт из формата 2\n3 Экспорт в формате 1\n4 Экспорт в формат 2\n5 Показать записи\n6 Установить фильтр\n7 Сбросить фильтр\n8 Редактировать\n9 Добавить запись\n0 Удалить запись\n* - Выход\n************************\n";
     Loader loader;
+    Logger logger;
 
-    public Control(){
+    public Control() throws IOException{
         this.pb = new Phonebook();
         this.view = new View();
         this.loader = new Loader();
+        this.logger = new Logger();
     }
 
     public void showBook(){
@@ -38,35 +44,41 @@ public class Control {
     }
 
 
-    public void changePhone(){
+    public void changePhone() throws IOException{
         this.pb.filtrate();
         int num = Integer.parseInt(this.view.ask("номер записи для изменения>> "));
+        logger.add("user change record: " + pb.filtered.get(num-1).toString());
         String phone = this.view.ask("новый номер телефона >> ");
         pb.filtered.get(num-1).setPhone(phone);
+        logger.add("to record: " + pb.filtered.get(num-1).toString());
     }
 
 
-    public void deleteRecord(){
+    public void deleteRecord() throws IOException{
         this.pb.filtrate();
         int num = Integer.parseInt(this.view.ask("номер записи для удаления>> "));
+        logger.add("user delete record" + pb.filtered.get(num-1).toString());
         pb.delRecord(pb.filtered.get(num-1));
         this.showBook();
     }
 
 
-    public void addRecord(){
+    public void addRecord() throws IOException{
         String fname = this.view.ask("введите имя >> ");
         String lname = this.view.ask("введите фамилию >> ");
         String phone = this.view.ask("введите номер телефона >> ");
         this.pb.addRecord(fname, lname, phone);
+        logger.add("user add new record: " + fname + " " + lname + " " + phone);
         this.pb.filtrate();
         
     }
 
-    public void run(){
+    public void run() throws IOException{
+        this.logger.add("new session starts");
         while (true){
             this.view.sout(menu);
             String answer = this.view.ask("Выберите действие >>");
+            this.logger.add("user calls function " + answer);
             if (answer.equals("*"))
                 break;
             int num = Integer.parseInt(answer);

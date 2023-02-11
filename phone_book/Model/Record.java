@@ -13,7 +13,7 @@ public class Record {
 
     @Override
     public String toString(){
-        return this.firstName + " " + this.lastName + "\t" + this.phone;
+        return this.firstName + " " + this.lastName + " " + this.phone;
     }
 
     public void setPhone(String phone){
