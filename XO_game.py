@@ -5,7 +5,6 @@ from requests import delete
 
 win = Tk()
 win.title('XO Game')
-win.geometry('255x285') 
 
 class XO_button:
     bg_color = 'PeachPuff3'
