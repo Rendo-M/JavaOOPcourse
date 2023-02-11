@@ -11,7 +11,7 @@ public class View {
     System.out.println(text);
    } 
    public String ask(String text) {
-    System.out.println(text);
+    System.out.print(text);
     return in.nextLine();
    }
 }

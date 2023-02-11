@@ -7,9 +7,7 @@ public class Main {
     public static void main(String[] args) {
        
        Control ct = new Control(); 
-       Loader loader = new Loader() ;
-       loader.loadPhones2(ct.pb);
-       ct.showBook();
+       ct.run();
        
     }
 }

@@ -38,6 +38,7 @@ public void showBook(ArrayList<Record> book){
 
 
 public void filtrate(){
+    this.filtered = new ArrayList<>();
     for (int i = 0; i < phonebook.size(); i++) {
         if (phonebook.get(i).isAppropriate(this.filter)){
             this.filtered.add(phonebook.get(i));
@@ -47,7 +48,10 @@ public void filtrate(){
 }
 
 public void addRecord(String fname, String lName, String phone){
-    this.phonebook.add(new Record(fname, lName, phone));
-  
+    this.phonebook.add(new Record(fname, lName, phone));}
+
+public void delRecord(Record record){
+    this.phonebook.remove(record);
+}  
 }
-}
+

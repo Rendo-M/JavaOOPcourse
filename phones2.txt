@@ -6,4 +6,4 @@ Dmitri;Vasilyev;2341112
 Ivan;Ivanov;234345
 Alexey;Filatov;2314122
 Igor;Sergeev;234564
-Victor;Fedorov;234666
+Victor;Fedorov;11
